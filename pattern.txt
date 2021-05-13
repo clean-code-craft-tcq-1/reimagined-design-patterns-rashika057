@@ -1,0 +1,6 @@
+Adapter Pattern
+-We want to connect two objects with different roles, but communication is not possible because of incompatible interface
+-Adapter pattern can solve this compatibilty issues. According to adapter pattern, we can create an adapter object like a middle ware which will convert the inputs from one object in a way that other object can understand it.
+-Advantage is that there is no need to adapt any object as per the need of other object. Every object has its own role and follows SRP and OCP.
+-Disadvantage is that we need extra interface that increases the code complexity
+-Example: A tool stores the battery temperature in celsius but BMS can detect breach in fahrenheit. Therefor, we need adater interface for data conversions.
