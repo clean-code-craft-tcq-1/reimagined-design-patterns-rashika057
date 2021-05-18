@@ -4,3 +4,9 @@ Adapter Pattern
 -Advantage is that there is no need to adapt any object as per the need of other object. Every object has its own role and follows SRP and OCP.
 -Disadvantage is that we need extra interface that increases the code complexity
 -Example: A tool stores the battery temperature in celsius but BMS can detect breach in fahrenheit. Therefor, we need adater interface for data conversions.
+
+Builder Pattern
+- This pattern is the creational pattern used when we want to create a complex object through number of steps. Different representations follow the same code structure steps
+- The process might be easy as same steps has to be followed for each reresentational class but creating multiple class can complicate the logic
+- house is the best example. House can contains different levels like basement, ground floor, terrace etc. but each contains 4 walls, windows, doors, floor
+
