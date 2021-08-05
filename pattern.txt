@@ -1,12 +1,39 @@
-Adapter Pattern
--We want to connect two objects with different roles, but communication is not possible because of incompatible interface
--Adapter pattern can solve this compatibilty issues. According to adapter pattern, we can create an adapter object like a middle ware which will convert the inputs from one object in a way that other object can understand it.
--Advantage is that there is no need to adapt any object as per the need of other object. Every object has its own role and follows SRP and OCP.
--Disadvantage is that we need extra interface that increases the code complexity
--Example: A tool stores the battery temperature in celsius but BMS can detect breach in fahrenheit. Therefor, we need adater interface for data conversions.
+
+
+Adapter Pattern	
+	
+•	We want to connect two objects with different roles, but communication is not possible because of incompatible interface.
+•	Adapter pattern can solve this compatibility issues. According to adapter pattern, we can create an adapter object like a middle ware which will convert the inputs from one object in a way that other object can understand it.
+•	Here client makes a request to the adapter by calling a method on it using target interface. Client remains unaware of adapter interface’s presence.
+•	Advantage is that there is no need to adapt any object as per the need of other object. Every object has its own role and follows SRP and OCP.
+•	Disadvantage is that we need extra interface that increases the code complexity. Sometimes, many adaptations are needed along the adapter chain in order to reach to the type which is required
+•	Example: A tool stores the battery temperature in Celsius but BMS can detect breach in Fahrenheit. Therefore, we need adapter interface for data conversions.
 
 Builder Pattern
-- This pattern is the creational pattern used when we want to create a complex object through number of steps. Different representations follow the same code structure steps
-- The process might be easy as same steps has to be followed for each reresentational class but creating multiple class can complicate the logic
-- house is the best example. House can contains different levels like basement, ground floor, terrace etc. but each contains 4 walls, windows, doors, floor
+
+•	This pattern is the creational pattern used when we want to create a complex object through number of steps. Different representations follow the same code structure steps
+•	The process of constructing an object should be generic so that it can be used to create different representations of the same object.This process might be easy as same steps has to be followed for each representational class but creating multiple class can complicate the logic
+•	House is the best example. House can contains different levels like basement, ground floor, terrace etc. but each contains 4 walls, windows, doors, and floor.
+•	Advantages are:- Objects can be built without much complex logic of object building process
+•	Disadvantages are:- it requires creating separate concrete builder for different types of product
+
+Composite Pattern
+
+•	It is a structural pattern that lets us compose objects into tree structures and then work with these structures as if they are individual objects. This treats group of objects as single instance
+•	Using this pattern makes sense when the core model of our app can be represented as a tree
+•	It follows hierarchy and ask each nodes to work on their tasks. For example, in a real world we have armies. Each army has brigade, platoons and soldiers. Order is received by higher authority and passed to lower level soldiers.
+•	In object-oriented programming, a composite is an object designed as a composition of one-or-more similar objects, all exhibiting similar functionality. This is known as a “has-a” relationship between objects.
+•	Client use the component interface to interact with objects in the composition structure. If receiver is a leaf then request is handled directly. If receiver is a composite, then it usually forwards request to its child components, possibly performing additional operations before and after forwarding.
+•	Advantages: it can lead to creation of less objects which can prevent memory related issues. Here objects can be shared which can reduce execution time
+•	Disadvantages: It makes the components too general
+
+Observer Pattern
+
+•	It is a behavioral pattern that lets you define a subscription mechanism to notify multiple objects when an event occurs that those objects are observing.
+•	Problem: For example, a store has thousands of customer waiting for new iPhone model available in store. If they visit daily, their effort is pointless, if product is on its way yet. 
+•	Solution:-So, in this case if customers can be notified together as soon as product is available, this can reduce lot of effort and worries.
+•	It specifies communication between objects: observable and observers. An observable is an object which notifies observers about the changes in its state.
+•	Advantages:   We can introduce new subscriber classes without having to change the publisher’s code (and vice versa if there’s a publisher interface). We can establish relations between objects at runtime.
+•	Disadvantages:  There can’t be fixed order to notify the subscribers.
+
 
